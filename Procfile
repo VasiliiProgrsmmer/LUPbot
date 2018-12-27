@@ -1,1 +1,1 @@
-worker: node LUPbot.js
+worker: node bot.js

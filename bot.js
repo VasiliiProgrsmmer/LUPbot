@@ -13,8 +13,8 @@ client.on("ready", () => {
 
 
 client.on('message', message =>{
-	if(message.author === client.user) return;
 	if(!!message.guild){
+	if(message.author === client.user) message.delete();
 	let mGuild = message.guild;
 	let sender = message.author;
 	if(!UserData[sender.id + message.guild.id]) UserData[sender.id + message.guild.id] = {};
@@ -90,7 +90,6 @@ client.on('message', message =>{
 		};
 	if(message.content.startsWith(prefix + 'shop')){
 		sender.send("1.Ньюфаг - 3 левела");
-		sender.send("2.Двуклеточное - 10 левелов");
 		message.delete();
 		};
 	if(message.content.startsWith(prefix + 'buy 1')){
@@ -115,6 +114,11 @@ client.on('message', message =>{
 			message.delete();
 		};
 		};
+		if(!message.guild){
+		        if(!(message.content.startsWith('Ти нищий кролб') || message.content.startsWith('1.Ньюфаг - 3 левела') || message.content.startsWith("Теперь Вы ньюфаг!!!"))){
+				message.delete();
+			}	
+		}
 	};
 });
 

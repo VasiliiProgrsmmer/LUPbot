@@ -114,12 +114,13 @@ client.on('message', message =>{
 			message.delete();
 		};
 		};
+	};
 		if(!message.guild){
 		        if(!(message.content.startsWith('Ти нищий кролб') || message.content.startsWith('1.Ньюфаг - 3 левела') || message.content.startsWith("Теперь Вы ньюфаг!!!"))){
 				message.delete();
-			}	
-		}
-	};
+			};	
+		};
+	
 });
 
 client.login(process.env.BOT_TOKEN);

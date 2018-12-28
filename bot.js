@@ -27,7 +27,12 @@ client.on('message', message =>{
 	if(!UserData[sender.id + message.guild.id].appedVal) UserData[sender.id + message.guild.id].appedActiv = false;
 	if(!UserData[sender.id + message.guild.id].appedVal) UserData[sender.id + message.guild.id].appedActiv2 = false;
 	if(!UserData[sender.id + message.guild.id].appedVal) UserData[sender.id + message.guild.id].appedVal = false;
-	
+	if(!UserData[sender.id + message.guild.id].slots) UserData[sender.id + message.guild.id].slots = 1;
+	if(!UserData[sender.id + message.guild.id].slot1) UserData[sender.id + message.guild.id].slot1 = "nothing";
+  if(!UserData[sender.id + message.guild.id].hasKortik) UserData[sender.id + message.guild.id].hasKortik = false;  
+    
+    
+    
 	const laMember = message.guild.member(message.author);
 	
 	if(UserData[sender.id + message.guild.id].appedSatan === false){
@@ -83,13 +88,16 @@ client.on('message', message =>{
 	});
 	
 	
-	
+	if(message.content.startsWith(prefix + 'attack ')){
+		};
 	if(message.content.startsWith(prefix + 'balance')){
         sender.send("Ваш баланс уровней:" + UserData[sender.id + message.guild.id].money);
 		message.delete();
 		};
 	if(message.content.startsWith(prefix + 'shop')){
 		sender.send("1.Ньюфаг - 3 левела");
+    sender.send("1.Двуклеточное - 10 левелов");
+    sender.send("3.Кортик - 2 левела");
 		message.delete();
 		};
 	if(message.content.startsWith(prefix + 'buy 1')){
@@ -105,9 +113,20 @@ client.on('message', message =>{
 		};
 		if(message.content.startsWith(prefix + 'buy 2')){
 		if(UserData[sender.id + message.guild.id].money >= 10){
-			message.member.addRole('527113461617000448');
+			message.member.addRole('528172871617347584');
 			UserData[sender.id + message.guild.id].money -= 10;
-			message.author.send("Теперь Вы ньюфаг!!!");
+			message.author.send("Теперь Вы двуклеточное!!!");
+			message.delete();
+		}else{
+			message.author.send("Ти нищий кролб");
+			message.delete();
+		};
+		};
+    if(message.content.startsWith(prefix + 'buy 3')){
+		if(UserData[sender.id + message.guild.id].money >= 2){
+			UserData[sender.id + message.guild.id].hasKortik = true;
+			UserData[sender.id + message.guild.id].money -= 2;
+			message.author.send("Теперь Вы имеете кортик!!!");
 			message.delete();
 		}else{
 			message.author.send("Ти нищий кролб");
@@ -116,7 +135,7 @@ client.on('message', message =>{
 		};
 	};
 		if(!message.guild){
-		        if(!(message.content.startsWith('Ти нищий кролб') || message.content.startsWith('1.Ньюфаг - 3 левела') || message.content.startsWith("Теперь Вы ньюфаг!!!"))){
+		        if(!(message.content.startsWith('Ти нищий кролб') || message.content.startsWith('1.Ньюфаг - 3 левела') || message.content.startsWith("Теперь Вы ньюфаг!!!") || message.content.startsWith("Теперь Вы двуклеточное!!!") || message.content.startsWith("Теперь Вы имеете кортик!!!") "Ваш Инвентарь:")){
 				message.delete();
 			};	
 		};

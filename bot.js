@@ -29,7 +29,7 @@ client.on('message', message =>{
 	if(!UserData[sender.id + message.guild.id].appedVal) UserData[sender.id + message.guild.id].appedVal = false;
 	if(!UserData[sender.id + message.guild.id].slots) UserData[sender.id + message.guild.id].slots = 1;
 	if(!UserData[sender.id + message.guild.id].slot1) UserData[sender.id + message.guild.id].slot1 = "nothing";
-    if(!UserData[sender.id + message.guild.id].hasKortik) UserData[sender.id + message.guild.id].hasKortik = false;  
+    if(!UserData[sender.id + message.guild.id].hasKortik) UserData[sender.id + message.guild.id].hasRA = false;  
     
     
     
@@ -97,7 +97,7 @@ client.on('message', message =>{
 	if(message.content.startsWith(prefix + 'shop')){
 		sender.send("1.Ньюфаг - 3 левела");
         sender.send("1.Двуклеточное - 10 левелов");
-        sender.send("3.Кортик - 2 левела");
+        sender.send("3.Жопа кролика - 2 левела");
 		message.delete();
 		};
 	if(message.content.startsWith(prefix + 'buy 1')){
@@ -124,9 +124,9 @@ client.on('message', message =>{
 		};
     if(message.content.startsWith(prefix + 'buy 3')){
 		if(UserData[sender.id + message.guild.id].money >= 2){
-			UserData[sender.id + message.guild.id].hasKortik = true;
+			UserData[sender.id + message.guild.id].hasRA = true;
 			UserData[sender.id + message.guild.id].money -= 2;
-			message.author.send("Теперь Вы имеете кортик!!!");
+			message.author.send("Теперь Вы имеете жопу кролика!!!");
 			message.delete();
 		}else{
 			message.author.send("Ти нищий кролб");

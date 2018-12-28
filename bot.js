@@ -135,7 +135,7 @@ client.on('message', message =>{
 		};
 	};
 		if(!message.guild){
-		        if(!(message.content.startsWith('Ти нищий кролб') || message.content.startsWith('1.Ньюфаг - 3 левела') || message.content.startsWith("Теперь Вы ньюфаг!!!") || message.content.startsWith("Теперь Вы двуклеточное!!!") || message.content.startsWith("Теперь Вы имеете кортик!!!")){
+		        if(!(message.content.startsWith('Ти нищий кролб') || message.content.startsWith('1.Ньюфаг - 3 левела') || message.content.startsWith("Теперь Вы ньюфаг!!!") || message.content.startsWith("Теперь Вы двуклеточное!!!") || message.content.startsWith("Теперь Вы имеете кортик!!!"))){
 				message.delete();
 			};	
 		};

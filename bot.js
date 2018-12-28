@@ -51,7 +51,7 @@ client.on('message', message =>{
 	if(UserData[sender.id + message.guild.id].appedActiv === false){
 		if (message.guild.member(message.author).roles.find('id' , '527915620369563668')){
 		UserData[sender.id + message.guild.id].money += 1;
-			UserData[sender.id + message.guild.id].appedVal = true;
+			UserData[sender.id + message.guild.id].appedActiv = true;
 		}
 	}
 	if(UserData[sender.id + message.guild.id].appedSatan2 === false){

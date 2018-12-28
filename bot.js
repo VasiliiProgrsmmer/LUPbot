@@ -13,8 +13,8 @@ client.on("ready", () => {
 
 
 client.on('message', message =>{
+        var tick? = false
 	if(!!message.guild){
-	if(message.author === client.user) message.delete();
 	let mGuild = message.guild;
 	let sender = message.author;
 	if(!UserData[sender.id + message.guild.id]) UserData[sender.id + message.guild.id] = {};
@@ -91,20 +91,20 @@ client.on('message', message =>{
 	if(message.content.startsWith(prefix + 'attack ')){
 		};
 	if(message.content.startsWith(prefix + 'balance')){
-        sender.send("Ваш баланс уровней:" + UserData[sender.id + message.guild.id].money);
+        message.channel.send("Ваш баланс уровней:" + UserData[sender.id + message.guild.id].money);
 		message.delete();
 		};
 	if(message.content.startsWith(prefix + 'shop')){
-		sender.send("1.Ньюфаг - 3 левела");
-        sender.send("1.Двуклеточное - 10 левелов");
-        sender.send("3.Жопа кролика - 2 левела");
+		message.channel.send("1.Ньюфаг - 3 левела");
+        message.channel.send("1.Двуклеточное - 10 левелов");
+        message.channel.send("3.Жопа кролика - 2 левела");
 		message.delete();
 		};
 	if(message.content.startsWith(prefix + 'buy 1')){
 		if(UserData[sender.id + message.guild.id].money >= 3){
 			message.member.addRole('527113461617000448');
 			UserData[sender.id + message.guild.id].money -= 3;
-			message.author.send("Теперь Вы ньюфаг!!!");
+			message.channel.send("Теперь " + message.author.username + " ньюфаг!!!");
 			message.delete();
 		}else{
 			message.author.send("Ти нищий кролб");
@@ -115,10 +115,10 @@ client.on('message', message =>{
 		if(UserData[sender.id + message.guild.id].money >= 10){
 			message.member.addRole('528172871617347584');
 			UserData[sender.id + message.guild.id].money -= 10;
-			message.author.send("Теперь Вы двуклеточное!!!");
+			message.channel.send("Теперь " + message.author.username + " двуклеточное!!!");
 			message.delete();
 		}else{
-			message.author.send("Ти нищий кролб");
+			message.channel.send(message.author.username + " - нищий кролб");
 			message.delete();
 		};
 		};
@@ -126,17 +126,14 @@ client.on('message', message =>{
 		if(UserData[sender.id + message.guild.id].money >= 2){
 			UserData[sender.id + message.guild.id].hasRA = true;
 			UserData[sender.id + message.guild.id].money -= 2;
-			message.author.send("Теперь Вы имеете жопу кролика!!!");
+			message.channel.send("Теперь " + message.author.username + " имеет жопу кролика!!!");
 			message.delete();
 		}else{
-			message.author.send("Ти нищий кролб");
+			message.channel.send(message.author.username + " - нищий кролб");
 			message.delete();
 		};
 		};
 	};
-		if(!message.guild){
-		};
-	
 });
 
 client.login(process.env.BOT_TOKEN);

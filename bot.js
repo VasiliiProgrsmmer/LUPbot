@@ -135,9 +135,6 @@ client.on('message', message =>{
 		};
 	};
 		if(!message.guild){
-		        if()
-			   message.delete();
-			};	
 		};
 	
 });

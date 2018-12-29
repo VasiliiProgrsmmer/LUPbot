@@ -15,7 +15,7 @@ client.on("ready", () => {
 
 
 client.on('message', message =>{
-        if (tick === false){
+        if (tick? === false){
           setTimeout(clMsg, 172800000);
 	}
 	if(!!message.guild){

@@ -93,7 +93,16 @@ client.on('message', message =>{
 	});
 	
 	
-	if(message.content.startsWith(prefix + 'attack ')){
+	if(message.content.startsWith(prefix + 'raid ')){
+		
+		let arg = message.slice((prefix + 'raid ').lenghth);
+		
+		if (arg === "1"){
+		
+			
+			
+		}
+		
 		};
 	if(message.content.startsWith(prefix + 'balance')){
         message.channel.send("Ваш баланс уровней:" + UserData[sender.id + message.guild.id].money);

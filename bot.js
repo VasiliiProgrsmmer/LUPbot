@@ -6,6 +6,26 @@ function clMsg(){
 }
 const fs = require('fs');
 var ticking = false;
+
+var Boss = {
+
+  hp : 100,
+  dmg : 10,
+  def : 5,
+  mana : 100,
+  manaRecovery : 5,
+  hpRecovery : 5,
+  skills : [var skill1 = {
+            name : "Мгновенное лечение", 
+            
+            description : "Восстанавливает 10 hp",
+            
+            
+            
+            }],  
+  
+}
+
 var prefix = "lev!"
 let UserData = JSON.parse(fs.readFileSync("UserData.json", "utf8"));
 client.on("ready", () => {
@@ -34,7 +54,7 @@ client.on('message', message =>{
 	if(!UserData[sender.id + message.guild.id].appedVal) UserData[sender.id + message.guild.id].appedVal = false;
 	if(!UserData[sender.id + message.guild.id].slots) UserData[sender.id + message.guild.id].slots = 1;
 	if(!UserData[sender.id + message.guild.id].slot1) UserData[sender.id + message.guild.id].slot1 = "nothing";
-    if(!UserData[sender.id + message.guild.id].hasKortik) UserData[sender.id + message.guild.id].hasRA = false;  
+  if(!UserData[sender.id + message.guild.id].hasKortik) UserData[sender.id + message.guild.id].hasRA = false;  
     
     
     

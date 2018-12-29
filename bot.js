@@ -6,7 +6,10 @@ function clMsg(){
 }
 const fs = require('fs');
 var ticking = false;
+var skill1 = {
 
+
+}
 var Boss = {
 
   hp : 100,

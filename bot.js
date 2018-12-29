@@ -35,13 +35,30 @@ var Boss = {
 function update(boss1, player1){
 
 if(boss1.hp <= 0){
+if(player1.hp > 0){
    
-Win();
+   Win();
+   
+   }else{
+   
+   Draw();
+   
+   }   
+
 
 
    
 }
-
+if(player1.hp <= 0){
+if(boss1.hp > 0){
+  
+  Lose();
+  
+}else{
+  
+ Draw();
+  
+}}
 }
 
 var prefix = "lev!"
@@ -137,7 +154,8 @@ client.on('message', message =>{
 		
 		if (arg === "1"){
 		
-			
+			message.chanel.send("Битва начата! Ваш противник: **ВАЛАКАСОНЕНАВИСТНИК**");
+      message.channel.send("Ваш ход");
 			
 		}
 		

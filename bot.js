@@ -5,7 +5,7 @@ function clMsg(){
 
 }
 const fs = require('fs');
-var tick? = false;
+var ticking = false;
 var prefix = "lev!"
 let UserData = JSON.parse(fs.readFileSync("UserData.json", "utf8"));
 client.on("ready", () => {
@@ -15,8 +15,9 @@ client.on("ready", () => {
 
 
 client.on('message', message =>{
-        if (tick? === false){
+        if (ticking === false){
           setTimeout(clMsg, 172800000);
+	  ticking = true;
 	}
 	if(!!message.guild){
 	let mGuild = message.guild;

@@ -8,25 +8,40 @@ const fs = require('fs');
 var ticking = false;
 var skill1 = {
 
+	
+ name : "Мгновенное лечение", 
+            
+ description : "Восстанавливает 15 hp",
+ 
+ use: function(boss1) {
+
+ boss1.hp += 15;	
+	
+}
 
 }
 var Boss = {
-
+  maxHP : 100,
   hp : 100,
   dmg : 10,
   def : 5,
   mana : 100,
   manaRecovery : 5,
   hpRecovery : 5,
-  skills : [var skill1 = {
-            name : "Мгновенное лечение", 
-            
-            description : "Восстанавливает 10 hp",
-            
-            
-            
-            }],  
+  skills : [skill1, null],  
   
+}
+
+function update(boss1, player1){
+
+if(boss1.hp <= 0){
+   
+Win();
+
+
+   
+}
+
 }
 
 var prefix = "lev!"

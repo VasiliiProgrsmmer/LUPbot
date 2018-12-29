@@ -148,8 +148,8 @@ client.on('message', message =>{
 		};
 	if(message.content.startsWith(prefix + 'shop')){
 		message.channel.send("1.Ньюфаг - 3 левела");
-        message.channel.send("1.Двуклеточное - 10 левелов");
-        message.channel.send("3.Жопа кролика - 2 левела");
+        message.channel.send("2.Двуклеточное - 10 левелов");
+        message.channel.send("3.Яйца жирафа - 2 левела");
 		message.delete();
 		};
 	if(message.content.startsWith(prefix + 'buy 1')){
@@ -178,7 +178,7 @@ client.on('message', message =>{
 		if(UserData[sender.id + message.guild.id].money >= 2){
 			UserData[sender.id + message.guild.id].hasRA = true;
 			UserData[sender.id + message.guild.id].money -= 2;
-			message.channel.send("Теперь " + message.author.username + " имеет жопу кролика!!!");
+			message.channel.send("Теперь " + message.author.username + " имеет яйца жирафа!!!");
 			message.delete();
 		}else{
 			message.channel.send(message.author.username + " - нищий кролб");

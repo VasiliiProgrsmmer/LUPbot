@@ -78,6 +78,7 @@ client.on('message', message =>{
 	let mGuild = message.guild;
 	let sender = message.author;
 	if(!UserData[sender.id + message.guild.id]) UserData[sender.id + message.guild.id] = {};
+	if(!UserData[sender.id + message.guild.id].inBattle) UserData[sender.id + message.guild.id].inBattle = false;
 	if(!UserData[sender.id + message.guild.id].money) UserData[sender.id + message.guild.id].money = 0;
 	if(!UserData[sender.id + message.guild.id].appedSatan) UserData[sender.id + message.guild.id].appedSatan = false;
 	if(!UserData[sender.id + message.guild.id].appedAnime) UserData[sender.id + message.guild.id].appedAnime = false;
@@ -155,11 +156,13 @@ client.on('message', message =>{
 		if (arg === "1"){
 		
 			message.chanel.send("Битва начата! Ваш противник: **ВАЛАКАСОНЕНАВИСТНИК**");
-      message.channel.send("Ваш ход");
+      message.channel.send("Ваш ход, напишите ***lev!acts*** для помощи в действиях.");
+			
 			
 		}
 		
 		};
+	if(){
 	if(message.content.startsWith(prefix + 'balance')){
         message.channel.send("Ваш баланс уровней:" + UserData[sender.id + message.guild.id].money);
 		message.delete();
@@ -203,6 +206,7 @@ client.on('message', message =>{
 			message.delete();
 		};
 		};
+	}
 	};
 });
 

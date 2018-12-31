@@ -6,6 +6,22 @@ function clMsg(){
 }
 const fs = require('fs');
 var ticking = false;
+var berserk = {
+
+	
+ name : "Берсерк", 
+            
+ description : "Увеличивает ваш урон на 10 едениц"
+ 
+ use: function(player1)  {
+
+ player1.dmg += 10;
+ var counter = 0;
+ if(pla)
+	
+}
+
+}
 var skill1 = {
 
 	
@@ -78,6 +94,7 @@ client.on('message', message =>{
 	let mGuild = message.guild;
 	let sender = message.author;
 	if(!UserData[sender.id + message.guild.id]) UserData[sender.id + message.guild.id] = {};
+	if(!UserData[sender.id + message.guild.id]) UserData[sender.id + message.guild.id] = ;
 	if(!UserData[sender.id + message.guild.id].inBattle) UserData[sender.id + message.guild.id].inBattle = false;
 	if(!UserData[sender.id + message.guild.id].money) UserData[sender.id + message.guild.id].money = 0;
 	if(!UserData[sender.id + message.guild.id].appedSatan) UserData[sender.id + message.guild.id].appedSatan = false;
@@ -90,7 +107,7 @@ client.on('message', message =>{
 	if(!UserData[sender.id + message.guild.id].appedVal) UserData[sender.id + message.guild.id].appedVal = false;
 	if(!UserData[sender.id + message.guild.id].slots) UserData[sender.id + message.guild.id].slots = 1;
 	if(!UserData[sender.id + message.guild.id].slot1) UserData[sender.id + message.guild.id].slot1 = "nothing";
-  if(!UserData[sender.id + message.guild.id].hasKortik) UserData[sender.id + message.guild.id].hasRA = false;  
+  if(!UserData[sender.id + message.guild.id].hasKnife) UserData[sender.id + message.guild.id].hasKnife = false;  
     
     
     
@@ -170,7 +187,7 @@ client.on('message', message =>{
 	if(message.content.startsWith(prefix + 'shop')){
 		message.channel.send("1.Ньюфаг - 3 левела");
         message.channel.send("2.Двуклеточное - 10 левелов");
-        message.channel.send("3.Яйца жирафа - 2 левела");
+        message.channel.send("3.Нож - 2 левела");
 		message.delete();
 		};
 	if(message.content.startsWith(prefix + 'buy 1')){
@@ -197,9 +214,9 @@ client.on('message', message =>{
 		};
     if(message.content.startsWith(prefix + 'buy 3')){
 		if(UserData[sender.id + message.guild.id].money >= 2){
-			UserData[sender.id + message.guild.id].hasRA = true;
+			UserData[sender.id + message.guild.id].hasKnife = true;
 			UserData[sender.id + message.guild.id].money -= 2;
-			message.channel.send("Теперь " + message.author.username + " имеет яйца жирафа!!!");
+			message.channel.send("Теперь " + message.author.username + " имеет нож!!!");
 			message.delete();
 		}else{
 			message.channel.send(message.author.username + " - нищий кролб");
